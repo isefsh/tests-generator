@@ -1,5 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --colorTheme-IHC: #EEECEC;
+  --colorTheme-WEB: #ECDAED;
+  --colorTheme-GAPS: #FFF3B2;
+}
+
+.firstUnderscore {
+  width: 11.438rem;
+  height: .688rem;
+  background-color: #FFD600;
+  border-radius: 10px;
+}
+
+.secondUnderscore {
+  width: .625rem;
+  height: .625rem;
+  background-color: #FFD600;
+  border-radius: 50%;
 }
