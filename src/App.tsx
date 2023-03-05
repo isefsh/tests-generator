@@ -1,11 +1,9 @@
-import React from "react"
-import ButtonTheme from "./components/ButtonTheme"
+import React from "react";
+import Header from "./components/Header";
 
 function App () {
-  const [theme, setTheme] = React.useState<string>("");
-  console.log(theme);
   return (
-    <ButtonTheme themeFullName="Desenvolvimento Web" themeAcronym="Web" setTheme={setTheme} />
+    <Header />
   )
 }
 

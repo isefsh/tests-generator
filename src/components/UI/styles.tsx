@@ -9,6 +9,7 @@ export const StyledButtonTheme = styled.li<ButtonThemeProps>`
   height: 16.438rem;
   background-color: ${(props) => `var(--colorTheme-${props.themeAcronym})`};
   border-radius: 40px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
   row-gap: 4.5rem;
@@ -20,7 +21,7 @@ export const StyledButtonTheme = styled.li<ButtonThemeProps>`
     transform: scale(1.025);
   }
 
-  & h3{
+  & h3 {
     font-weight: 300;
     text-align: right;
     color: #686868;
