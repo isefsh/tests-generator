@@ -1,10 +1,19 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { db } from "../assets/db";
 import { TestContext } from "../context/TestContext";
 
 const Question = () => {
 
     const { testData } = useContext(TestContext);
+q
+/*    const selectQuestions = () => {
+        const questions = testData.indexQuestions.map((i) => db.questions[i]);
+        
+    }
+    /*const question = () => {
+        const [question, setQuestion] = useState([]);
+        
+    }*/
 
     return(        
         <div>
@@ -13,9 +22,9 @@ const Question = () => {
             <p>Tema escolhido: {testData.choosenTheme}</p>
             <ul>
                 {
-                    testData.indexQuestions.map((indexNumbers, index) => (
+                    testData.questions.map((question, index) => (
                         <li key={index}>
-                            {indexNumbers}
+                            {question.question}
                         </li>
                     ))
                 }

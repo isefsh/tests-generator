@@ -18,9 +18,10 @@ const FormData = () => {
     const onSubmit = (data) => {
         
         const list = createArrayRandom.createArray(data.choosenTheme);
-        const listObject = { indexQuestions: list };
+        const listObject = { questions: list };
         const testData = Object.assign(data, listObject);
         saveTestData(testData);
+        console.log(testData.questions);
         navigate('/question');
     };
 
