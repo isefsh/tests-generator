@@ -123,7 +123,7 @@ export const StyledButtonWrapper = styled.div<ButtonProps>`
     position: absolute;
     background-color: transparent;
     font-size: 3.125rem;
-    color: #6A3709;
+    color: ${(props) => props.isGivingUp ? `#3B3B3B` : `#6A3709`};
     border: none;
     outline: none;
   }
