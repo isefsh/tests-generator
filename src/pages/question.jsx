@@ -25,9 +25,11 @@ const Question = () => {
             setIndexQuestion(indexQuestion + 1); //
         }
         if(selectedOption) {
+            let answer = parseInt(selectedOption.value);
             updateTestData.current.questions[indexQuestion] = {
                 ...updateTestData.current.questions[indexQuestion], //cria uma copia do objeto para preservar os dados já armazenados
-                userAnswer: parseInt(selectedOption.value)
+                userAnswer: answer,
+                result: answer === testData.questions[indexQuestion].rightAnswer ? "Right" : "Wrong"
             };
         }
     } 

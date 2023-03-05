@@ -9,10 +9,12 @@ const Result = () => {
     
     const { testData } = useContext(TestContext);
 
+
     return(
         <div>
             {
                 testData.questions.map((question, index) => {
+
                     return (
                         <div key={index}>
                             <p>{question.question}</p>
