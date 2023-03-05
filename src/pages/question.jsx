@@ -6,14 +6,34 @@ import { TestContext } from "../context/TestContext";
 const Question = () => {
 
     const { testData } = useContext(TestContext);
+    const { saveTestData } = useContext(TestContext);
     const [indexQuestion, setIndexQuestion] = useState(0);
+    const [userAnswers, setUserAnswer] = useState({});
+
     const navigate = useNavigate();
 
     const nextQuestion = () => {
+        const selectedOption = document.querySelector('input[name="option"]:checked');
+        
         if(indexQuestion === testData.questions.length -1){
+            const test = Object.assign(testData, userAnswers); 
+            saveTestData(test);   
             navigate('/result');
         }else{
             setIndexQuestion(indexQuestion + 1);
+        }
+        if (selectedOption) {
+            setUserAnswer(
+                {
+                    ...userAnswers, 
+                        [indexQuestion]: {
+                            question: testData.questions[indexQuestion].question,
+                            userAnswer: selectedOption.value,
+                            rightAnswer: testData.questions[indexQuestion].rightAnswer
+                        }
+                    }
+            );
+            console.log(userAnswers);
         }
     } 
 

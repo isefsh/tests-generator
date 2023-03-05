@@ -4,8 +4,12 @@ import { db } from "../assets/db";
 import { TestContext } from "../context/TestContext";
 
 const Result = () => {
+
+    
+    const { testData } = useContext(TestContext);
+    
     return(
-        <div>Result</div>
+        <div>Result{console.log(testData)}</div>
     );
 };
 
