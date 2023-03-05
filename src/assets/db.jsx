@@ -14,7 +14,7 @@ export const db = {
       theme: "Animal",
       question: "Qual é a pergunta dois deste sistema?",
       options: ["Opção 1", "Opção 2", "Opção 3", "Opção 4"],
-      rightAnswer: 4,
+      rightAnswer: 1,
     },
     {
       theme: "Animal",
@@ -44,7 +44,7 @@ export const db = {
       theme: "Artes",
       question: "Qual é a pergunta de artes dois deste sistema?",
       options: ["Opção 1", "Opção 2", "Opção 3", "Opção 4"],
-      rightAnswer: 4,
+      rightAnswer: 0,
     },
     {
       theme: "Artes",
@@ -80,7 +80,7 @@ export const db = {
       theme: "Artes",
       question: "Qual é a pergunta de artes três deste sistema",
       options: ["Opção 1", "Opção 2", "Opção 3", "Opção 4"],
-      rightAnswer: 4,
+      rightAnswer: 0,
     },
     {
       theme: "Animal",
@@ -110,7 +110,7 @@ export const db = {
       theme: "Animal",
       question: "Qual é a pergunta de artes cinco deste sistema?",
       options: ["Opção 1", "Opção 2", "Opção 3", "Opção 4"],
-      rightAnswer: 4,
+      rightAnswer: 0,
     },
     {
       theme: "Animal",

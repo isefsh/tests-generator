@@ -8,29 +8,27 @@ const Question = () => {
     const { testData } = useContext(TestContext);
     const { saveTestData } = useContext(TestContext);
     const [indexQuestion, setIndexQuestion] = useState(0);
-    const userAnswers = useRef({}); // armazenamento dos objetos em uma variavel de referência, não causa renderização dos componentes
+    const updateTestData = useRef(testData); // armazenamento dos objetos em uma variavel de referência, não causa renderização dos componentes
+
 
     const navigate = useNavigate();
 
     const nextQuestion = () => {
         const selectedOption = document.querySelector('input[name="option"]:checked'); // armazena na variavel a opção selecionada pelo usuário
-        
+
         if(indexQuestion === testData.questions.length -1){ //verifica se o usuário chegou ao final do teste
-            const test = { testData: userAnswers.current }; //cria um objeto onde o atributo testData armazena um array com as questões, id da resposta correta e a resposta do usuario
-            const newTestData = Object.assign(testData, test); //cria um  novo objeto com os dados armazenado no contexto e no objeto test
-            saveTestData(newTestData); //atualiza os dados armazenados no contexto
-            console.log(newTestData);   
+            saveTestData(updateTestData.current); //atualiza os dados armazenados no contexto
+            
+            console.log(updateTestData.current);   
             navigate('/result');
         }else{
             setIndexQuestion(indexQuestion + 1); //
         }
         if(selectedOption) {
-            userAnswers.current[indexQuestion] = {
-                question: testData.questions[indexQuestion].question,
-                userAnswer: selectedOption.value,
-                rightAnswer: testData.questions[indexQuestion].rightAnswer
+            updateTestData.current.questions[indexQuestion] = {
+                ...updateTestData.current.questions[indexQuestion], //cria uma copia do objeto para preservar os dados já armazenados
+                userAnswer: selectedOption.value
             };
-            console.log(userAnswers.current);
         }
     } 
 
