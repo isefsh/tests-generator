@@ -5,7 +5,7 @@ import { TestContext } from "../context/TestContext";
 const Question = () => {
 
     const { testData } = useContext(TestContext);
-q
+
 /*    const selectQuestions = () => {
         const questions = testData.indexQuestions.map((i) => db.questions[i]);
         
