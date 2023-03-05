@@ -9,17 +9,17 @@ const Result = () => {
     
     const { testData } = useContext(TestContext);
 
-
     return(
-        <div>
+        <ol>
             {
                 testData.questions.map((question, index) => {
 
                     return (
-                        <div key={index}>
+                        <li key={index}>
                             <p>{question.question}</p>
-                            <ul>
+                            <ol type="a">
                                 {
+                                    
                                     testData.questions[index].options.map((option, indexOption) =>
                                         {
                                             return(
@@ -28,12 +28,15 @@ const Result = () => {
                                         }
                                     )
                                 }
-                            </ul>
-                        </div>
+                            </ol>
+                            <p>Resposta correta: {question.rightAnswer}</p>
+                            <p>Resposta do usuário: {question.userAnswer}</p>
+                            <p>Resultado: {question.result}</p>
+                        </li>
                     )
                 })
             }
-        </div>
+        </ol>
     );
 };
 

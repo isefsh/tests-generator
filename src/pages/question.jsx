@@ -10,6 +10,7 @@ const Question = () => {
     const [indexQuestion, setIndexQuestion] = useState(0);
     const updateTestData = useRef(testData); // armazenamento dos objetos em uma variavel de referência, não causa renderização dos componentes
 
+    const optionValue = ['a', 'b', 'c', 'd'];
 
     const navigate = useNavigate();
 
@@ -25,7 +26,7 @@ const Question = () => {
             setIndexQuestion(indexQuestion + 1); //
         }
         if(selectedOption) {
-            let answer = parseInt(selectedOption.value);
+            let answer = selectedOption.value;
             updateTestData.current.questions[indexQuestion] = {
                 ...updateTestData.current.questions[indexQuestion], //cria uma copia do objeto para preservar os dados já armazenados
                 userAnswer: answer,
@@ -49,7 +50,7 @@ const Question = () => {
 
             optionInput.type = 'radio';
             optionInput.name = 'option';
-            optionInput.value = i + 1;
+            optionInput.value = optionValue[i];
             optionLabel.textContent = questionData.options[i];
 
             option.appendChild(optionInput);
@@ -71,7 +72,7 @@ const Question = () => {
             <p>Nome do(a) aluno(a): {testData.enteredName}</p>
             <p>Tema escolhido: {testData.choosenTheme}</p>
             <p id="question"></p>
-            <ul id="options"></ul>
+            <ol id="options" type="a"></ol>
             <button id="btnNext" onClick={nextQuestion}></button>
         </div>
     );
