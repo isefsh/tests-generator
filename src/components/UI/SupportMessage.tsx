@@ -1,6 +1,7 @@
 import {
   StyledSupportFooter,
   StyledSupportMessage,
+  StyledSupportText,
   StyledSupportWrapper,
 } from "./styles";
 import SuricatoImage from "../../assets/imgs/suricato-img.svg";
@@ -11,13 +12,17 @@ const SupportMessage = () => {
     <React.Fragment>
       <StyledSupportMessage>
         <StyledSupportWrapper>
-          <hgroup>
+          <StyledSupportText>
             <h1>Acreditamos em você!</h1>
+            <div style={{ display: "flex", columnGap: ".563rem" }}>
+              <span className="firstUnderscore" />
+              <span className="secondUnderscore" />
+            </div>
             <p>
               A equipe Suricato acredita em você, pequeno Suricato! Se não tiver
               um bom score, recomece!
             </p>
-          </hgroup>
+          </StyledSupportText>
           <img src={SuricatoImage} alt="Supporting Image" />
         </StyledSupportWrapper>
       </StyledSupportMessage>

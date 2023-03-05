@@ -78,6 +78,20 @@ export const StyledSupportWrapper = styled.div`
   align-items: center;
 `;
 
+export const StyledSupportText = styled.hgroup`
+  display: flex;
+  flex-direction: column;
+  row-gap: 4.125rem;
+
+  & h1 {
+    font-size: 4.375rem;
+  }
+
+  & p {
+    color: #686868;
+  }
+`;
+
 export const StyledSupportFooter = styled.ul`
   list-style: none;
   display: flex;
