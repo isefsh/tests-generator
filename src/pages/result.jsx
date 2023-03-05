@@ -9,34 +9,50 @@ const Result = () => {
     
     const { testData } = useContext(TestContext);
 
-    return(
-        <ol>
-            {
-                testData.questions.map((question, index) => {
-
-                    return (
-                        <li key={index}>
-                            <p>{question.question}</p>
-                            <ol type="a">
-                                {
-                                    
-                                    testData.questions[index].options.map((option, indexOption) =>
-                                        {
-                                            return(
-                                                <li key={indexOption}>{option}</li>
-                                            )
-                                        }
-                                    )
-                                }
-                            </ol>
-                            <p>Resposta correta: {question.rightAnswer}</p>
-                            <p>Resposta do usuário: {question.userAnswer}</p>
-                            <p>Resultado: {question.result}</p>
-                        </li>
-                    )
-                })
+    const countResult = () => {
+        const nQuestions = testData.questions.length;
+        let count = 0;
+        for(let i = 0; i < nQuestions; i++){
+            if(testData.questions[i].result === "Right"){
+                count++;
             }
-        </ol>
+        }
+        return(
+            <p>Quantidade de acertos: {count} / {nQuestions}</p>
+        );
+    }
+
+    return(
+        <div>
+            {countResult()}
+            <ol>
+                {
+                    testData.questions.map((question, index) => {
+
+                        return (
+                            <li key={index}>
+                                <p>{question.question}</p>
+                                <ol type="a">
+                                    {
+                                        
+                                        testData.questions[index].options.map((option, indexOption) =>
+                                            {
+                                                return(
+                                                    <li key={indexOption}>{option}</li>
+                                                )
+                                            }
+                                        )
+                                    }
+                                </ol>
+                                <p>Resposta correta: {question.rightAnswer}</p>
+                                <p>Resposta do usuário: {question.userAnswer}</p>
+                                <p>Resultado: {question.result}</p>
+                            </li>
+                        )
+                    })
+                }
+            </ol>
+        </div>
     );
 };
 
