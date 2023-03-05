@@ -35,3 +35,17 @@
 .wordUnderline {
   border-bottom: 1px solid #ffd600;
 }
+
+.firstUnderscoreDetail {
+  width: 4.125rem;
+  height: 1.375rem;
+  background-color: #FFD600;
+  border-radius: 10px;
+}
+
+.secondUnderscoreDetail {
+  width: 1.375rem;
+  height: 1.375rem;
+  background-color: #FFD600;
+  border-radius: 50%;
+}

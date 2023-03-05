@@ -1,9 +1,9 @@
 import React from "react";
-import SupportMessage from "./components/UI/SupportMessage";
+import InputName from "./components/Form/InputName";
 
 function App () {
   return (
-    <SupportMessage />
+    <InputName />
   )
 }
 
