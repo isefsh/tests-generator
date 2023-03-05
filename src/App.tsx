@@ -1,9 +1,9 @@
 import React from "react";
-import Description from "./components/UI/Description";
+import SupportMessage from "./components/UI/SupportMessage";
 
 function App () {
   return (
-    <Description />
+    <SupportMessage />
   )
 }
 

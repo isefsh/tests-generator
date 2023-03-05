@@ -64,3 +64,24 @@ export const StyledDescriptionMessage = styled.div`
     color: #6A3709;
   }
 `;
+
+export const StyledSupportMessage = styled.footer`
+  width: 100%;
+  background-color: #FFFBE4;
+  padding-block: 7.5rem;
+  padding-inline-start: 5rem;
+`;
+
+export const StyledSupportWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const StyledSupportFooter = styled.ul`
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  background-color: #ffd600;
+  padding: .75rem;
+`;
