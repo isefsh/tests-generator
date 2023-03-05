@@ -27,7 +27,7 @@ const Question = () => {
         if(selectedOption) {
             updateTestData.current.questions[indexQuestion] = {
                 ...updateTestData.current.questions[indexQuestion], //cria uma copia do objeto para preservar os dados já armazenados
-                userAnswer: selectedOption.value
+                userAnswer: parseInt(selectedOption.value)
             };
         }
     } 

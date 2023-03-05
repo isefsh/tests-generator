@@ -17,7 +17,15 @@ const Result = () => {
                         <div key={index}>
                             <p>{question.question}</p>
                             <ul>
-                                <li>{question.options[question.rightAnswer]}</li>
+                                {
+                                    testData.questions[index].options.map((option, indexOption) =>
+                                        {
+                                            return(
+                                                <li key={indexOption}>{option}</li>
+                                            )
+                                        }
+                                    )
+                                }
                             </ul>
                         </div>
                     )
