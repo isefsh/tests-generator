@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { db } from "../assets/db";
 import { TestContext } from "../context/TestContext";
@@ -8,32 +8,29 @@ const Question = () => {
     const { testData } = useContext(TestContext);
     const { saveTestData } = useContext(TestContext);
     const [indexQuestion, setIndexQuestion] = useState(0);
-    const [userAnswers, setUserAnswer] = useState({});
+    const userAnswers = useRef({}); // armazenamento dos objetos em uma variavel de referência, não causa renderização dos componentes
 
     const navigate = useNavigate();
 
     const nextQuestion = () => {
-        const selectedOption = document.querySelector('input[name="option"]:checked');
+        const selectedOption = document.querySelector('input[name="option"]:checked'); // armazena na variavel a opção selecionada pelo usuário
         
-        if(indexQuestion === testData.questions.length -1){
-            const test = Object.assign(testData, userAnswers); 
-            saveTestData(test);   
+        if(indexQuestion === testData.questions.length -1){ //verifica se o usuário chegou ao final do teste
+            const test = { testData: userAnswers.current }; //cria um objeto onde o atributo testData armazena um array com as questões, id da resposta correta e a resposta do usuario
+            const newTestData = Object.assign(testData, test); //cria um  novo objeto com os dados armazenado no contexto e no objeto test
+            saveTestData(newTestData); //atualiza os dados armazenados no contexto
+            console.log(newTestData);   
             navigate('/result');
         }else{
-            setIndexQuestion(indexQuestion + 1);
+            setIndexQuestion(indexQuestion + 1); //
         }
-        if (selectedOption) {
-            setUserAnswer(
-                {
-                    ...userAnswers, 
-                        [indexQuestion]: {
-                            question: testData.questions[indexQuestion].question,
-                            userAnswer: selectedOption.value,
-                            rightAnswer: testData.questions[indexQuestion].rightAnswer
-                        }
-                    }
-            );
-            console.log(userAnswers);
+        if(selectedOption) {
+            userAnswers.current[indexQuestion] = {
+                question: testData.questions[indexQuestion].question,
+                userAnswer: selectedOption.value,
+                rightAnswer: testData.questions[indexQuestion].rightAnswer
+            };
+            console.log(userAnswers.current);
         }
     } 
 
@@ -43,8 +40,7 @@ const Question = () => {
         const questionOptions = document.getElementById('options');
         const btnNext = document.getElementById('btnNext');
 
-        // Remove as opções antigas antes de adicionar as novas
-        questionOptions.innerHTML = '';
+        questionOptions.innerHTML = ''; // Remove as opções antigas antes de adicionar as novas
 
         for(let i = 0; i < questionData.options.length; i++){
             const option = document.createElement('li');
