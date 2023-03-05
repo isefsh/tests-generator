@@ -1,9 +1,9 @@
 import React from "react";
-import InputName from "./components/Form/InputName";
+import Button from "./components/UI/Button";
 
 function App () {
   return (
-    <InputName />
+    <Button buttonLabel="Iniciar" buttonType="button" onClick={() => console.log("Alô")} testState={false} />
   )
 }
 

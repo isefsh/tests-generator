@@ -4,6 +4,10 @@ interface ButtonThemeProps {
   themeAcronym: string,
 }
 
+interface ButtonProps {
+  isGivingUp: boolean,
+}
+
 export const StyledButtonTheme = styled.li<ButtonThemeProps>`
   width: 25.333rem;
   height: 16.438rem;
@@ -98,4 +102,29 @@ export const StyledSupportFooter = styled.ul`
   justify-content: space-around;
   background-color: #ffd600;
   padding: .75rem;
+`;
+
+export const StyledButtonWrapper = styled.div<ButtonProps>`
+  width: 12.5rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  & span {
+    position: relative;
+    width: 12.5rem;
+    height: 2.813rem;
+    background: ${(props) => props.isGivingUp ? `rgba(157, 157, 157, 0.5)` : `#ffd600`};
+    border-radius: 10px;
+  }
+
+  & button {
+    position: absolute;
+    background-color: transparent;
+    font-size: 3.125rem;
+    color: #6A3709;
+    border: none;
+    outline: none;
+  }
 `;
