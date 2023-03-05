@@ -26,3 +26,7 @@
   background-color: #FFD600;
   border-radius: 50%;
 }
+
+.wordUnderline {
+  border-bottom: 1px solid #ffd600;
+}
