@@ -1,9 +1,13 @@
 import React from "react";
-import Button from "./components/UI/Button";
+import Header from "./components/Header";
+import HomePage from "./pages/HomePage";
 
 function App () {
   return (
-    <Button buttonLabel="Iniciar" buttonType="button" onClick={() => console.log("Alô")} testState={false} />
+    <React.Fragment>
+      <Header />
+      {/* <HomePage /> */}
+    </React.Fragment>
   )
 }
 

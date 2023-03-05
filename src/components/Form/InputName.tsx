@@ -1,7 +1,11 @@
 import React from "react";
 import { StyledInputName, StyledInputNameWrapper, StyledLabelInputName } from "./styles";
 
-const InputName = () => {
+interface InputProps {
+  reference: React.RefObject<HTMLInputElement>,
+}
+
+const InputName = (props: InputProps) => {
   return (
     <StyledInputNameWrapper>
       <StyledLabelInputName>
@@ -10,7 +14,7 @@ const InputName = () => {
       </StyledLabelInputName>
       <StyledInputName>
         <span />
-        <input type="text" name="studentName" id="studentName" placeholder="Nome de suricato" />
+        <input ref={props.reference} type="text" name="studentName" id="studentName" placeholder="Nome de suricato" />
       </StyledInputName>
       <div style={{ display: "flex", columnGap: "1.25rem", justifyContent: "right" }}>
         <span className="firstUnderscoreDetail" />
