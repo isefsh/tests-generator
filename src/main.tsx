@@ -5,6 +5,7 @@ import App from './App'
 import HomePage from './pages/HomePage'
 import QuestionPage from './pages/QuestionPage'
 import './index.css'
+import ResultPage from './pages/ResultPage'
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,7 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <HomePage /> },
       { path: "/question", element: <QuestionPage /> },
+      { path: "/result", element: <ResultPage /> },
     ],
   }
 ]);
