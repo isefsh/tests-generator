@@ -1,48 +1,81 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { TestContext } from "../../context/TestContext";
 import Button from "../UI/Button";
-import { StyledFieldQuestion, StyledLabelQuestion, StyledQuestionDiv, StyledQuestionSection } from "./styles";
+import LineDetail from "../UI/LineDetail";
+import { StyledFieldQuestion, StyledLabelQuestion, StyledQuestionDiv, StyledQuestionSection } from "./styles"; 
 
 const FieldQuestion = () => {
+  const toNavigate = useNavigate();
+  const { testData, saveTestData } = React.useContext(TestContext);
+  const [indexQuestion, setIndexQuestion] = React.useState<number>(0);
+  const updateData = React.useRef(testData);
+
+  console.log(testData);
+
+  function nextQuestion () {
+    const selectedOption = (document.querySelector('input[name="answer"]:checked') as HTMLInputElement);
+
+    if (indexQuestion === testData.questions.length - 1) {
+      saveTestData(updateData.current);
+      toNavigate("/result");
+    } else {
+      setIndexQuestion(indexQuestion + 1);
+    }
+
+    if (selectedOption) {
+      let answer = parseInt(selectedOption.value);
+      updateData.current.questions[indexQuestion] = {
+        ...updateData.current.questions[indexQuestion],
+        userAnswer: answer,
+        result: answer === testData.questions[indexQuestion].rightAnswer ? "Right" : "Wrong"
+      };
+    }
+  }
+
+  function onSubmitHandler (e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+  }
+
   return (
     <StyledQuestionSection id="mainSection">
       <hgroup>
-        <h1>IHC</h1>
+        <h1>{testData.theme.abbrTheme}</h1>
         <div style={{ display: "flex", columnGap: ".563rem" }}>
           <span className="firstUnderscore" />
           <span className="secondUnderscore" />
         </div>
       </hgroup>
-      <form>
+      <form onSubmit={onSubmitHandler}>
         <StyledQuestionDiv>
           <header>
             <hgroup>
-              <h1>Questão 1</h1>
+              <h1>Questão {indexQuestion + 1}</h1>
               <div style={{ display: "flex", columnGap: ".563rem" }}>
                 <span className="firstUnderscore" />
                 <span className="secondUnderscore" />
               </div>
             </hgroup>
-            <h3>Interação Humano Computador</h3>
+            <h3>{testData.theme.name}</h3>
           </header>
           <StyledFieldQuestion>
             <legend>
-              Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem IpsumLorem
-              Ipsum Lorem IpsumLorem IpsumLorem Ipsum Lorem Ipsum Lorem Ipsum
-              Lorem Ipsum :
+             {testData.questions[indexQuestion].question}
             </legend>
-            <StyledLabelQuestion htmlFor="alternative-01">
-              <input type="radio" name="answer" id="alternative-01" />
-              Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem.
-            </StyledLabelQuestion>
-            <StyledLabelQuestion htmlFor="alternative-01">
-              <input type="radio" name="answer" id="alternative-01" />
-              Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem.
-            </StyledLabelQuestion>
+            {
+              testData.questions[indexQuestion].options.map((option: string, index: number) => (
+                <StyledLabelQuestion key={`options-${index}`} htmlFor={`alternative-${index}`}>
+                  <input type="radio" name="answer" id={`alternative-${index}`} value={index} />
+                  { option }
+                </StyledLabelQuestion>
+              ))
+            }
           </StyledFieldQuestion>
+          <LineDetail isQuestionPage={true} />
         </StyledQuestionDiv>
         <div style={{ display: "flex", columnGap: "3.125rem", justifyContent: "right" }}>
           <Button buttonLabel="Desistir" buttonType="button" testState={true} />
-          <Button buttonLabel="Avançar" buttonType="submit" testState={false} />
+          <Button buttonLabel="Avançar" buttonType="submit" testState={false} onClick={nextQuestion} />
         </div>
       </form>
     </StyledQuestionSection>

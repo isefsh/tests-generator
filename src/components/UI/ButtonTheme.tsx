@@ -1,17 +1,20 @@
 import React, { SetStateAction } from "react";
+import LineDetail from "./LineDetail";
 import { StyledButtonTheme } from "./styles";
 
 interface ButtonThemeProps {
   themeFullName: string;
   themeAcronym: string;
-  setTheme: React.Dispatch<SetStateAction<string>>;
+  themeIndexValue: number;
+  setTheme: React.Dispatch<SetStateAction<number | null>>;
 }
 
 const ButtonTheme = (props: ButtonThemeProps) => {
   return (
     <StyledButtonTheme
       themeAcronym={props.themeAcronym.toLocaleUpperCase()}
-      onClick={() => props.setTheme(props.themeAcronym)}
+      onClick={() => props.setTheme(props.themeIndexValue)}
+      value={props.themeIndexValue}
     >
       <h3>{props.themeFullName}</h3>
       <div>
@@ -22,10 +25,7 @@ const ButtonTheme = (props: ButtonThemeProps) => {
             {props.themeAcronym}
           </h1>
         </hgroup>
-        <div style={{ display: "flex", columnGap: ".563rem" }}>
-          <span className="firstUnderscore" />
-          <span className="secondUnderscore" />
-        </div>
+        <LineDetail isQuestionPage={false} />
       </div>
     </StyledButtonTheme>
   );

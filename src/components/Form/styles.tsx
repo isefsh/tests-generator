@@ -56,7 +56,6 @@ export const StyledInputName = styled.div`
 `;
 
 export const StyledQuestionSection = styled.section`
-  width: 88%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -74,6 +73,8 @@ export const StyledQuestionSection = styled.section`
 `;
 
 export const StyledQuestionDiv = styled.div`
+  width: 79.75em;
+  height: 35.625em;
   display: flex;
   flex-direction: column;
   row-gap: 2.5rem;

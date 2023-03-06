@@ -128,3 +128,16 @@ export const StyledButtonWrapper = styled.div<ButtonProps>`
     outline: none;
   }
 `;
+
+interface StyledLineDetailProps {
+  isQuestionPage: boolean,
+}
+
+export const StyledLineDetail = styled.div<StyledLineDetailProps>`
+  display: flex;
+  column-gap: .438em;
+
+  ${props => props.isQuestionPage && (`
+    justify-content: right;
+  `)}
+`;

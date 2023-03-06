@@ -1,13 +1,14 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 import Header from "./components/Header";
-import QuestionPage from "./pages/QuestionPage";
+import { TestProvider } from "./context/TestContext";
 
 function App () {
   return (
-    <React.Fragment>
+    <TestProvider>
       <Header />
-      <QuestionPage />
-    </React.Fragment>
+      <Outlet />
+    </TestProvider>
   )
 }
 
