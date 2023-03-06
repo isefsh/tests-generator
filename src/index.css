@@ -11,41 +11,37 @@
   --colorTheme-IHC: #EEECEC;
   --colorTheme-WEB: #ECDAED;
   --colorTheme-GAPS: #FFF3B2;
-}
-
-#root {
-  width: 100%;
-  height: 100vh;
+  --colorDetail: #FFD600;
 }
 
 .firstUnderscore {
   width: 11.438rem;
   height: .688rem;
-  background-color: #FFD600;
+  background-color: var(--colorDetail);
   border-radius: 10px;
 }
 
 .secondUnderscore {
   width: .625rem;
   height: .625rem;
-  background-color: #FFD600;
+  background-color: var(--colorDetail);
   border-radius: 50%;
 }
 
 .wordUnderline {
-  border-bottom: 1px solid #ffd600;
+  border-bottom: 1px solid var(--colorDetail);
 }
 
 .firstUnderscoreDetail {
   width: 4.125rem;
   height: 1.375rem;
-  background-color: #FFD600;
+  background-color: var(--colorDetail);
   border-radius: 10px;
 }
 
 .secondUnderscoreDetail {
   width: 1.375rem;
   height: 1.375rem;
-  background-color: #FFD600;
+  background-color: var(--colorDetail);
   border-radius: 50%;
 }

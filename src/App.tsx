@@ -1,5 +1,4 @@
 import React from "react";
-import FieldQuestion from "./components/Form/FieldQuestion";
 import Header from "./components/Header";
 import QuestionPage from "./pages/QuestionPage";
 

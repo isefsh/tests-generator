@@ -4,7 +4,7 @@ import SupportMessage from "../components/UI/SupportMessage";
 
 const QuestionPage = () => {
   return (
-    <main style={{ paddingBlock: "4.375rem", overflowX: "hidden" }}>
+    <main style={{ paddingBlockStart: "2.281em", paddingBlockEnd: "9.875em", overflowX: "hidden" }}>
       <FieldQuestion />
       <SupportMessage />
     </main>
