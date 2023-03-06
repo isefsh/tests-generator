@@ -13,18 +13,8 @@ const createRandom = (filterQuestions) =>{
     }
 }
 
-const createArray = (theme) =>{
-    const filterQuestions = db.questions.filter(question => question.theme === theme);
-    
-    /*const nQuestions = filterQuestions.length;
-    let list = [];
-
-    console.log(filterQuestions);
-
-    for(let i = 0; i < nQuestions; i++){
-        list[i] = i + 1;
-    }
-*/
+const createArray = (abbrTheme) =>{
+    const filterQuestions = db.questions.filter(question => question.abbrTheme === abbrTheme);
     createRandom(filterQuestions);
 
     return filterQuestions.slice(0, 10); //retorna os 10 primeiros elementos

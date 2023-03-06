@@ -32,7 +32,7 @@ const Result = () => {
                         return (
                             <li key={index}>
                                 <p>{question.question}</p>
-                                <ol type="a">
+                                <ul>
                                     {
                                         
                                         testData.questions[index].options.map((option, indexOption) =>
@@ -43,7 +43,7 @@ const Result = () => {
                                             }
                                         )
                                     }
-                                </ol>
+                                </ul>
                                 <p>Resposta correta: {question.rightAnswer}</p>
                                 <p>Resposta do usuário: {question.userAnswer}</p>
                                 <p>Resultado: {question.result}</p>

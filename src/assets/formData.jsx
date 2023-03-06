@@ -16,12 +16,17 @@ const FormData = () => {
 
     
     const onSubmit = (data) => {
-        
-        const list = createArrayRandom.createArray(data.choosenTheme);
-        const listObject = { questions: list };
+        const theme = {
+            id: themes[data.choosenTheme].id,
+            abbrTheme: themes[data.choosenTheme].abbrTheme,
+            name: themes[data.choosenTheme].name
+        };
+
+        const list = createArrayRandom.createArray(theme.abbrTheme);
+        const listObject = { questions: list, theme: theme};
         const testData = Object.assign(data, listObject);
         saveTestData(testData);
-        console.log(testData.questions);
+        console.log(testData);
         navigate('/question');
     };
 
@@ -38,7 +43,7 @@ const FormData = () => {
                         <div key={index}>
                             <label htmlFor={theme.name}>
                                 {theme.name}
-                                <input type="radio" {...register("choosenTheme")} value={theme.name} />
+                                <input type="radio" {...register("choosenTheme")} value={index} />
                             </label>
                         </div>
                     ))

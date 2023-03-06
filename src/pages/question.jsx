@@ -10,8 +10,6 @@ const Question = () => {
     const [indexQuestion, setIndexQuestion] = useState(0);
     const updateTestData = useRef(testData); // armazenamento dos objetos em uma variavel de referência, não causa renderização dos componentes
 
-    const optionValue = ['a', 'b', 'c', 'd'];
-
     const navigate = useNavigate();
 
     const nextQuestion = () => {
@@ -26,7 +24,7 @@ const Question = () => {
             setIndexQuestion(indexQuestion + 1); //
         }
         if(selectedOption) {
-            let answer = selectedOption.value;
+            let answer = parseInt(selectedOption.value);
             updateTestData.current.questions[indexQuestion] = {
                 ...updateTestData.current.questions[indexQuestion], //cria uma copia do objeto para preservar os dados já armazenados
                 userAnswer: answer,
@@ -50,7 +48,7 @@ const Question = () => {
 
             optionInput.type = 'radio';
             optionInput.name = 'option';
-            optionInput.value = optionValue[i];
+            optionInput.value = i;
             optionLabel.textContent = questionData.options[i];
 
             option.appendChild(optionInput);
@@ -70,9 +68,10 @@ const Question = () => {
         <div>
             <h1>Dados do formulário:</h1>
             <p>Nome do(a) aluno(a): {testData.enteredName}</p>
-            <p>Tema escolhido: {testData.choosenTheme}</p>
+            <p>Tema escolhido: {testData.theme.abbrTheme}</p>
+            <p>Questão {indexQuestion + 1} {testData.theme.name} {indexQuestion + 1} / {testData.questions.length}</p>
             <p id="question"></p>
-            <ol id="options" type="a"></ol>
+            <ul id="options"></ul>
             <button id="btnNext" onClick={nextQuestion}></button>
         </div>
     );
