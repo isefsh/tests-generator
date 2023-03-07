@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { TestContext } from "../../context/TestContext";
 import Button from "../UI/Button";
 import LineDetail from "../UI/LineDetail";
+import ModalComponent from "../Modal/Modal";
 import { StyledFieldQuestion, StyledLabelQuestion, StyledQuestionDiv, StyledQuestionSection } from "./styles"; 
 
 const FieldQuestion = () => {
@@ -11,6 +12,13 @@ const FieldQuestion = () => {
   
   const [indexQuestion, setIndexQuestion] = React.useState<number>(0);
   const updateData = React.useRef(testData);
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const handleButtonClick = () => {
+    setIsModalVisible(true);
+  };
+
 
   function nextQuestion () {
     const selectedOption = (document.querySelector('input[name="answer"]:checked') as HTMLInputElement);
@@ -92,7 +100,8 @@ const FieldQuestion = () => {
             justifyContent: "right",
           }}
         >
-          <Button buttonLabel="Desistir" buttonType="button" testState={true} />
+          <Button buttonLabel="Desistir" buttonType="button" testState={true} onClick={handleButtonClick}/>
+          {isModalVisible && <ModalComponent onClose={() => setIsModalVisible(false)} />}
           <Button
             buttonLabel={indexQuestion < testData.questions.length - 1 ? "Avançar" : "Finalizar"}
             buttonType="submit"
