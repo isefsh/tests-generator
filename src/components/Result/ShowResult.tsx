@@ -53,7 +53,7 @@ const ShowResult = () => {
       </ResultScoreSection>
       <StyledNavigate>
         <span />
-        <button type="button" onClick={() => { toNavigate("/") }}>Voltar à Home</button>
+        <button type="button" onClick={() => { toNavigate("/question") }}>Tentar de novo</button>
       </StyledNavigate>
       <StyledFinalLine />
       <ShowAnswers />

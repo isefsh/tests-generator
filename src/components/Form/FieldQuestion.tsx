@@ -8,7 +8,6 @@ import { StyledFieldQuestion, StyledLabelQuestion, StyledQuestionDiv, StyledQues
 const FieldQuestion = () => {
   const toNavigate = useNavigate();
   const { testData, saveTestData } = React.useContext(TestContext);
-  const [isChecked, setIsChecked] = React.useState<boolean>(false);
   
   const [indexQuestion, setIndexQuestion] = React.useState<number>(0);
   const updateData = React.useRef(testData);
@@ -16,31 +15,31 @@ const FieldQuestion = () => {
   function nextQuestion () {
     const selectedOption = (document.querySelector('input[name="answer"]:checked') as HTMLInputElement);
 
-    if (indexQuestion === testData.questions.length - 1) {
-      saveTestData(updateData.current);
-      toNavigate("/result");
-    } else {
-      setIndexQuestion(indexQuestion + 1);
-    }
-
     if (selectedOption) {
+      selectedOption.checked = true;
+
       let answer = parseInt(selectedOption.value);
       updateData.current.questions[indexQuestion] = {
         ...updateData.current.questions[indexQuestion],
         userAnswer: answer,
         result: answer === testData.questions[indexQuestion].rightAnswer ? "Right" : "Wrong"
       };
+
+      if (indexQuestion === testData.questions.length - 1) {
+        saveTestData(updateData.current);
+        toNavigate("/result");
+      } else {
+        setIndexQuestion(indexQuestion + 1);
+      }
+
+      selectedOption.checked = false;
+    } else {
+      alert("Selecione uma opção antes de ir para a próxima pergunta.");
     }
   }
 
-  React.useEffect(() => {
-    setIsChecked
-  }, [isChecked]);
-
   function onSubmitHandler(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-
-    setIsChecked(false);
   }
 
   return (
@@ -72,14 +71,12 @@ const FieldQuestion = () => {
                   id="questionOptions"
                   key={`options-${index}`}
                   htmlFor={`alternative-${index}`}
-                  onClick={() => setIsChecked(true)}
                 >
                   <input
                     type="radio"
                     name="answer"
                     id={`alternative-${index}`}
                     value={index}
-                    checked={isChecked}
                   />
                   {option}
                 </StyledLabelQuestion>
