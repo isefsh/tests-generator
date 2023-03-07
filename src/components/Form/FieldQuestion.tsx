@@ -94,7 +94,7 @@ const FieldQuestion = () => {
         >
           <Button buttonLabel="Desistir" buttonType="button" testState={true} />
           <Button
-            buttonLabel="Avançar"
+            buttonLabel={indexQuestion < testData.questions.length - 1 ? "Avançar" : "Finalizar"}
             buttonType="submit"
             testState={false}
             onClick={nextQuestion}
