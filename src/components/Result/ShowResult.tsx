@@ -1,11 +1,11 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { TestContext } from "../../context/TestContext";
 import { StyledFinalLine } from "../Header/styles";
 import LineDetail from "../UI/LineDetail";
 import ConditionalImage from "./ConditionalImage";
 import ShowAnswers from "./ShowAnswers";
-import { ResultScoreSection, ResultScoreText, ScorePercentage, StyledImage, StyledNavigate, StyledResultHeader, StyledResultOutput } from "./styles";
+import { ButtonResultWrapper, ResultScoreSection, ResultScoreText, ScorePercentage, StyledImage, StyledNavigate, StyledResultHeader, StyledResultOutput } from "./styles";
 
 const ShowResult = () => {
   const toNavigate = useNavigate();
@@ -51,10 +51,22 @@ const ShowResult = () => {
         </StyledResultOutput>
         <ConditionalImage score={parseInt(countResult())} />
       </ResultScoreSection>
-      <StyledNavigate>
-        <span />
-        <button type="button" onClick={() => { toNavigate("/question") }}>Tentar de novo</button>
-      </StyledNavigate>
+      <ButtonResultWrapper>
+        <StyledNavigate>
+          <span />
+          <button
+            type="button"
+            onClick={() => {
+              toNavigate("/question");
+            }}
+          >
+            Tentar de novo
+          </button>
+        </StyledNavigate>
+        <Link to="/">
+          Selecionar outro tema
+        </Link>
+      </ButtonResultWrapper>
       <StyledFinalLine />
       <ShowAnswers />
     </React.Fragment>

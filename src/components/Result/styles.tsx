@@ -121,3 +121,19 @@ export const StyledNavigate = styled.div`
     outline: none;
   }
 `;
+
+export const ButtonResultWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4.25em;
+
+  & a {
+    color: #6A3709;
+    font-size: 1.625em;
+    text-decoration: none;
+    border: none;
+    border-bottom: 5px solid #6FDA80;
+  }
+`;
