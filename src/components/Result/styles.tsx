@@ -68,6 +68,7 @@ export const StyledImage = styled.div`
 `;
 
 export const AnswersSection = styled.section`
+  padding-block: 1.75em;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -79,6 +80,8 @@ export const AnswersSection = styled.section`
 export const AnswersWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   row-gap: 3.625em;
 `;
 
@@ -90,5 +93,31 @@ export const AnswerHeader = styled.header`
   & p {
     font-weight: 300;
     color: #686868;
+  }
+`;
+
+export const StyledNavigate = styled.div`
+  width: 23%;
+  height: 3.428em;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  padding-block-end: 3.125em;
+
+  & span {
+    position: relative;
+    width: 8.875em;
+    height: 2.625em;
+    background-color: #ffd600;
+    border-radius: 10px;
+  }
+
+  & button {
+    position: absolute;
+    background-color: transparent;
+    font-size: 2.625em;
+    color: #6A3709;
+    border: none;
+    outline: none;
   }
 `;

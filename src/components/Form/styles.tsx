@@ -78,7 +78,7 @@ interface QuestionBox {
 }
 
 export const StyledQuestionDiv = styled.div<QuestionBox>`
-  width: 79.75em;
+  width: 89vw;
   height: 35.625em;
   display: flex;
   flex-direction: column;

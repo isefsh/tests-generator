@@ -1,12 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { TestContext } from "../../context/TestContext";
+import { StyledFinalLine } from "../Header/styles";
 import LineDetail from "../UI/LineDetail";
 import ConditionalImage from "./ConditionalImage";
 import ShowAnswers from "./ShowAnswers";
-import { ResultScoreSection, ResultScoreText, ScorePercentage, StyledImage, StyledResultHeader, StyledResultOutput } from "./styles";
+import { ResultScoreSection, ResultScoreText, ScorePercentage, StyledImage, StyledNavigate, StyledResultHeader, StyledResultOutput } from "./styles";
 
 const ShowResult = () => {
-  const { testData } =React.useContext(TestContext);
+  const toNavigate = useNavigate();
+  const { testData } = React.useContext(TestContext);
 
   function countResult () {
     const nQuestions = testData.questions.length;
@@ -48,6 +51,11 @@ const ShowResult = () => {
         </StyledResultOutput>
         <ConditionalImage score={parseInt(countResult())} />
       </ResultScoreSection>
+      <StyledNavigate>
+        <span />
+        <button type="button" onClick={() => { toNavigate("/") }}>Voltar à Home</button>
+      </StyledNavigate>
+      <StyledFinalLine />
       <ShowAnswers />
     </React.Fragment>
   );
