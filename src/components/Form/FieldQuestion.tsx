@@ -46,7 +46,7 @@ const FieldQuestion = () => {
         </div>
       </hgroup>
       <form onSubmit={onSubmitHandler}>
-        <StyledQuestionDiv>
+        <StyledQuestionDiv isResultPage={false}>
           <header>
             <hgroup>
               <h1>Questão {indexQuestion + 1}</h1>

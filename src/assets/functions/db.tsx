@@ -55,7 +55,7 @@ export const db = {
       abbrTheme: "IHC",
       question: "Na teoria das cores as cores vermelho e verde são:",
       options: ["Quentes", "Complementares", "Análogas", "Tríades"],
-      rightAnswer: 3,
+      rightAnswer: 1,
     },
     {
       abbrTheme: "IHC",

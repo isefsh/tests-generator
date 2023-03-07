@@ -8,6 +8,7 @@ interface ScoreProps {
 }
 
 const ConditionalImage = (props: ScoreProps) => {
+  console.log(props.score)
   return props.score >= 6 ? (
     <StyledImage>
       <h1>Parabéns, Suricato!</h1>

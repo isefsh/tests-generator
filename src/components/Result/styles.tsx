@@ -61,4 +61,34 @@ export const StyledImage = styled.div`
   background-color: #FFFBE4;
   text-align: center;
   padding-block: 3.375em;
+
+  & h3 {
+    font-weight: 300;
+  }
+`;
+
+export const AnswersSection = styled.section`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 3.25em;
+`;
+
+export const AnswersWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  row-gap: 3.625em;
+`;
+
+export const AnswerHeader = styled.header`
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.563em;
+
+  & p {
+    font-weight: 300;
+    color: #686868;
+  }
 `;

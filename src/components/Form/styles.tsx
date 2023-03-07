@@ -72,7 +72,12 @@ export const StyledQuestionSection = styled.section`
   }
 `;
 
-export const StyledQuestionDiv = styled.div`
+interface QuestionBox {
+  isResultPage: boolean,
+  statusQuestion?: string,
+}
+
+export const StyledQuestionDiv = styled.div<QuestionBox>`
   width: 79.75em;
   height: 35.625em;
   display: flex;
@@ -82,6 +87,12 @@ export const StyledQuestionDiv = styled.div`
   border-radius: 40px;
   padding-block: 1.125rem;
   padding-inline: 1.75rem;
+
+  ${(props) => props.isResultPage && props.statusQuestion === "Right" ? (`
+    background-color: #E2FDE6;
+  `) : (`
+    background-color: #FFECEC;
+  `)}
   
   & header {
     display: flex;
@@ -110,10 +121,20 @@ export const StyledFieldQuestion = styled.fieldset`
   padding-block: 4.75rem;
 `;
 
-export const StyledLabelQuestion = styled.label`
+interface LabelProps {
+  isTheRightAnswer?: boolean,
+  isTheChoosenAnswer?: boolean,
+}
+
+export const StyledLabelQuestion = styled.label<LabelProps>`
   display: flex;
   align-items: center;
   column-gap: .938rem;
+
+  ${(props) => props.isTheRightAnswer && (`
+    background-color: rgba(255, 214, 0, 0.67);
+    border-radius: 5px;
+  `)}
 
   & input {
     appearance: none;
@@ -128,5 +149,10 @@ export const StyledLabelQuestion = styled.label`
       background-color: #FFD600;
       border-color: #6A3709;
     }
+
+    ${(props) => props.isTheChoosenAnswer && (`
+      background-color: #ffd600;
+      border-color: #6a3709;
+    `)}
   }
 `;
