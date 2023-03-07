@@ -1,35 +1,16 @@
 import React from "react";
+import { TestContextProps, TestDataProps } from "../interfaces/test-interface";
 
 interface ChildrenProps {
   children: React.ReactNode
 }
 
-interface ThemeProps {
-  id: number,
-  abbrTheme: string,
-  name: string,
-}
-
-interface QuestionsProps {
-  abbrTheme: string,
-  question: string,
-  options: Array<string>,
-  rightAnswer: number,
-}
-
-interface TestDataProps {
-  enteredName: string,
-  choosenTheme: string,
-  questions: Array<QuestionsProps>,
-  theme: ThemeProps,
-}
-
-export const TestContext = React.createContext<any>({
+export const TestContext = React.createContext<TestContextProps>({
   testData: {
     enteredName: "",
     choosenTheme: "",
     questions: [
-      { abbrTheme: "", question: "", options: ["", "", "", ""], rightAnswer: 0 }
+      { abbrTheme: "", question: "", options: ["", "", "", ""], rightAnswer: 0, userAnswer: 0, result: "" }
     ],
     theme: {
       id: 0,
@@ -37,13 +18,13 @@ export const TestContext = React.createContext<any>({
       name: "",
     }
   },
-  saveTestData: (data: TestDataProps) => {},
+  saveTestData: (data: any) => {},
 });
 
 export const TestProvider = ({ children }: ChildrenProps) => {
   const [testData, setTestData] = React.useState<any>({});
 
-  const saveTestData = (data: TestDataProps) => {
+  const saveTestData = (data: any) => {
     setTestData(data);
   };
 

@@ -6,6 +6,7 @@ import {
 } from "./styles";
 import SuricatoImage from "../../assets/imgs/suricato-img.svg";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const SupportMessage = () => {
   return (
@@ -27,9 +28,9 @@ const SupportMessage = () => {
         </StyledSupportWrapper>
       </StyledSupportMessage>
       <StyledSupportFooter>
-        <li>Home</li>
+        <Link to="/" ><li>Home</li></Link>
         <li>Suricato Copyright</li>
-        <li>Ir para o topo</li>
+        <a href="#mainTheme"><li>Ir para o topo</li></a>
       </StyledSupportFooter>
     </React.Fragment>
   );

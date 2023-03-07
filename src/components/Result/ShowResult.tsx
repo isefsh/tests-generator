@@ -1,24 +1,42 @@
 import React from "react";
+import { TestContext } from "../../context/TestContext";
 import LineDetail from "../UI/LineDetail";
+import ConditionalImage from "./ConditionalImage";
 import { ResultScoreSection, ResultScoreText, ScorePercentage, StyledImage, StyledResultHeader, StyledResultOutput } from "./styles";
 
 const ShowResult = () => {
+  const { testData } =React.useContext(TestContext);
+
+  function countResult () {
+    const nQuestions = testData.questions.length;
+
+    let count = 0;
+
+    for (let i = 0; i < nQuestions; i++) {
+      if (testData.questions[i].result === "Right") {
+        count++;
+      }
+    }
+
+    return `${count}/${nQuestions}`
+  }
+
   return (
     <ResultScoreSection>
       <StyledResultOutput>
         <StyledResultHeader>
           <hgroup>
-            <h1>IHC</h1>
+            <h1>{testData.theme.abbrTheme}</h1>
             <LineDetail isQuestionPage={false} />
           </hgroup>
-          <h3>Interação Humano Computador</h3>
+          <h3>{testData.theme.name}</h3>
         </StyledResultHeader>
         <ResultScoreText>
-          <p>Você acertou <strong>8/10</strong> questões e obteve</p>
+          <p>Você acertou <strong>{countResult()}</strong> questões e obteve</p>
           <ScorePercentage>
             <span />
             <output>
-              80%
+              { `${(parseInt(countResult()) * 100)/10}%` }
             </output>
           </ScorePercentage>
         </ResultScoreText>
@@ -26,10 +44,7 @@ const ShowResult = () => {
           <LineDetail isQuestionPage={true} />
         </footer>
       </StyledResultOutput>
-      <StyledImage>
-        <h1>Parabéns, Suricato!</h1>
-        <p>Suricato feliz ;)</p>
-      </StyledImage>
+      <ConditionalImage score={(parseInt(countResult()) * 100)/10} />
     </ResultScoreSection>
   );
 };

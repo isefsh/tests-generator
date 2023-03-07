@@ -35,6 +35,7 @@ const HomePage = () => {
         choosenTheme: indexTheme!
       }, listObject);
       saveTestData(testData);
+      localStorage.setItem("testData", JSON.stringify(testData));
       toNavigate("/question");
     }
 

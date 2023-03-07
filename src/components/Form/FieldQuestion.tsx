@@ -8,10 +8,9 @@ import { StyledFieldQuestion, StyledLabelQuestion, StyledQuestionDiv, StyledQues
 const FieldQuestion = () => {
   const toNavigate = useNavigate();
   const { testData, saveTestData } = React.useContext(TestContext);
+  
   const [indexQuestion, setIndexQuestion] = React.useState<number>(0);
   const updateData = React.useRef(testData);
-
-  console.log(testData);
 
   function nextQuestion () {
     const selectedOption = (document.querySelector('input[name="answer"]:checked') as HTMLInputElement);
