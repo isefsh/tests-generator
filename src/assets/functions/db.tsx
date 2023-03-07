@@ -11,6 +11,8 @@ export const db = {
         "Qual das matérias a seguir não é relacionada a Interação Humano Computador?",
       options: ["Artes", "Design", "Psicologia", "História"],
       rightAnswer: 3,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "IHC",
@@ -22,6 +24,8 @@ export const db = {
         "Findability"
       ],
       rightAnswer: 0,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "IHC",
@@ -33,6 +37,8 @@ export const db = {
         "Quarta Onda"
       ],
       rightAnswer: 2,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "IHC",
@@ -44,18 +50,24 @@ export const db = {
         "Todas as anteriores"
       ],
       rightAnswer: 3,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "IHC",
       question: "Na teoria das cores as cores vermelho e laranja são:",
       options: ["Frias", "Complementares", "Análogas", "Tríades"],
       rightAnswer: 2,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "IHC",
       question: "Na teoria das cores as cores vermelho e verde são:",
       options: ["Quentes", "Complementares", "Análogas", "Tríades"],
       rightAnswer: 1,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "IHC",
@@ -67,6 +79,8 @@ export const db = {
         "Verde, vermelho e amarelo"
       ],
       rightAnswer: 2,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "IHC",
@@ -78,12 +92,16 @@ export const db = {
         "Verde-amarelado"
       ],
       rightAnswer: 3,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "IHC",
       question: "O círculo cromático é formado por quantas cores?",
       options: ["12", "10", "11", "08"],
       rightAnswer: 0,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "IHC",
@@ -95,6 +113,8 @@ export const db = {
         "Roxo, Azul, Verde e Amarelo"
       ],
       rightAnswer: 0,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "IHC",
@@ -107,6 +127,8 @@ export const db = {
         "Ferramenta"
       ],
       rightAnswer: 1,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "IHC",
@@ -118,6 +140,8 @@ export const db = {
         "Nenhuma das anteriores"
       ],
       rightAnswer: 1,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "IHC",
@@ -129,6 +153,8 @@ export const db = {
         "Usabilidade é relacionado a usuário e UX é relacionado a produto"
       ],
       rightAnswer: 2,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "IHC",
@@ -140,6 +166,8 @@ export const db = {
         "Nenhuma das anteriores"
       ],
       rightAnswer: 1,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "Web",
@@ -152,6 +180,8 @@ export const db = {
         "Em JavaScript, as expressões literais representam valores fixos."
       ],
       rightAnswer: 3,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "Web",
@@ -164,6 +194,8 @@ export const db = {
         "Lista duplamente encadeada e não ordenada."
       ],
       rightAnswer: 0,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "Web",
@@ -176,6 +208,8 @@ export const db = {
         "Inicialização"
       ],
       rightAnswer: 3,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "Web",
@@ -188,6 +222,8 @@ export const db = {
         "XML Schema"
       ],
       rightAnswer: 2,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "Web",
@@ -200,6 +236,8 @@ export const db = {
         "$_ENV"
       ],
       rightAnswer: 1,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "Web",
@@ -212,6 +250,8 @@ export const db = {
         "Exterior"
       ],
       rightAnswer: 2,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "Web",
@@ -224,6 +264,8 @@ export const db = {
         "A altura de um nó é o comprimento do menor caminho do nó até o seu primeiro descendente."
       ],
       rightAnswer: 1,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "Web",
@@ -236,6 +278,8 @@ export const db = {
         "CSS: linguagem de estilo declarativa que determina como o código HTML deve ser exibido na tela. No entanto, não suporta que o estilo de uma página seja replicado a outras páginas."
       ],
       rightAnswer: 2,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "Web",
@@ -248,6 +292,8 @@ export const db = {
         "O include produz um aviso e executa o script quando um arquivo é incluído com a instrução include e o PHP não consegue localizá-lo."
       ],
       rightAnswer: 3,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "Web",
@@ -260,6 +306,8 @@ export const db = {
         "HAVING <agrupamento de elementos>"
       ],
       rightAnswer: 1,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "Web",
@@ -272,6 +320,8 @@ export const db = {
         "Deverá utilizar o operador '||'"
       ],
       rightAnswer: 2,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "Web",
@@ -284,6 +334,8 @@ export const db = {
         '"div > p" seleciona todos os elementos <p> que são descendentes de um elemento <div>, enquanto "div p" seleciona todos os elementos <p> que são filhos diretos de um elemento <div> independentemente do nível de "nesting".'
       ],
       rightAnswer: 0,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "Web",
@@ -296,6 +348,8 @@ export const db = {
         "Em XML, não é permitido utilizar caracteres de entidade, como &lt; ou &gt;."
       ],
       rightAnswer: 3,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "Web",
@@ -308,6 +362,8 @@ export const db = {
         "Server-side request forgery (SSRF)"
       ],
       rightAnswer: 2,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "Web",
@@ -320,6 +376,8 @@ export const db = {
         "Video"
       ],
       rightAnswer: 0,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "GAPS",
@@ -332,6 +390,8 @@ export const db = {
         "d)	Recursos necessários, métodos de desenvolvimento, produtos aceitos das fases anteriores, integração do sistema em sua completude."
       ],
       rightAnswer: 2,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "GAPS",
@@ -344,6 +404,8 @@ export const db = {
         "d)	Codifica-remenda, cascata, prototipo, interativo, incremental, espiral."
       ],
       rightAnswer: 0,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "GAPS",
@@ -356,6 +418,8 @@ export const db = {
         "d)	Englobar apenas características únicas, distantes de qualquer modelo criado previamente."
       ],
       rightAnswer: 1,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "GAPS",
@@ -368,6 +432,8 @@ export const db = {
         "d)	Cascata, codifica-rementa, iterativo."
       ],
       rightAnswer: 3,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "GAPS",
@@ -380,6 +446,8 @@ export const db = {
         "d)	V, V, F, V."
       ],
       rightAnswer: 3,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "GAPS",
@@ -392,6 +460,8 @@ export const db = {
         "d)	Precisa sempre satisfazer todos os requisitos do produto final em todas as etapas."
       ],
       rightAnswer: 2,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "GAPS",
@@ -404,6 +474,8 @@ export const db = {
         "d)	projeto – fases – o seu término."
       ],
       rightAnswer: 3,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "GAPS",
@@ -416,6 +488,8 @@ export const db = {
         "d)	Produtos resultantes."
       ],
       rightAnswer: 1,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "GAPS",
@@ -428,6 +502,8 @@ export const db = {
         "d)	A fim de atrapalhar as grandes empresas e desorganizar a produção dos projetos."
       ],
       rightAnswer: 0,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "GAPS",
@@ -440,6 +516,8 @@ export const db = {
         "d)	Apenas criar a documentação do software."
       ],
       rightAnswer: 1,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "GAPS",
@@ -452,6 +530,8 @@ export const db = {
         "d)	Entrega do projeto no tempo devido."
       ],
       rightAnswer: 0,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "GAPS",
@@ -464,6 +544,8 @@ export const db = {
         "Cascata"
       ],
       rightAnswer: 3,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "GAPS",
@@ -476,6 +558,8 @@ export const db = {
         "d)	Ideal para projetos com requisitos bem definidos."
       ],
       rightAnswer: 3,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "GAPS",
@@ -488,6 +572,8 @@ export const db = {
         "Gibberish"
       ],
       rightAnswer: 2,
+      userAnswer: null,
+      result: null
     },
     {
       abbrTheme: "GAPS",
@@ -500,6 +586,8 @@ export const db = {
         "Gibberish"
       ],
       rightAnswer: 2,
+      userAnswer: null,
+      result: null
     },
   ],
 };

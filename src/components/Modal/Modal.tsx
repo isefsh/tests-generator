@@ -3,14 +3,17 @@ import Button from "../UI/Button";
 
 import ShySuricato from "../../assets/imgs/suricato-triste.png";
 import Close from "../../assets/imgs/close.svg";
+import { useNavigate } from "react-router-dom";
 
 type ModalProps = {
   onClose: () => void;
 };
 
 const ModalComponent = ({ onClose }: ModalProps) => {
+  const toNavigate = useNavigate();
+  
   const desistir = () => {
-
+    toNavigate("/result");
   }
 
   return (
