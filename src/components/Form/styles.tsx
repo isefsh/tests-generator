@@ -88,9 +88,11 @@ export const StyledQuestionDiv = styled.div<QuestionBox>`
   padding-block: 1.125rem;
   padding-inline: 1.75rem;
 
-  ${(props) => props.isResultPage && props.statusQuestion === "Right" ? (`
+  ${(props) => props.isResultPage && props.statusQuestion === "Right" && (`
     background-color: #E2FDE6;
-  `) : (`
+  `)}
+
+  ${(props) => props.isResultPage && props.statusQuestion === "Wrong" && (`
     background-color: #FFECEC;
   `)}
   

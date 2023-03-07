@@ -8,6 +8,7 @@ import { StyledFieldQuestion, StyledLabelQuestion, StyledQuestionDiv, StyledQues
 const FieldQuestion = () => {
   const toNavigate = useNavigate();
   const { testData, saveTestData } = React.useContext(TestContext);
+  const [isChecked, setIsChecked] = React.useState<boolean>(false);
   
   const [indexQuestion, setIndexQuestion] = React.useState<number>(0);
   const updateData = React.useRef(testData);
@@ -32,8 +33,14 @@ const FieldQuestion = () => {
     }
   }
 
-  function onSubmitHandler (e: React.FormEvent<HTMLFormElement>) {
+  React.useEffect(() => {
+    setIsChecked
+  }, [isChecked]);
+
+  function onSubmitHandler(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+
+    setIsChecked(false);
   }
 
   return (
@@ -58,23 +65,43 @@ const FieldQuestion = () => {
             <h3>{testData.theme.name}</h3>
           </header>
           <StyledFieldQuestion>
-            <legend>
-             {testData.questions[indexQuestion].question}
-            </legend>
-            {
-              testData.questions[indexQuestion].options.map((option: string, index: number) => (
-                <StyledLabelQuestion key={`options-${index}`} htmlFor={`alternative-${index}`}>
-                  <input type="radio" name="answer" id={`alternative-${index}`} value={index} />
-                  { option }
+            <legend>{testData.questions[indexQuestion].question}</legend>
+            {testData.questions[indexQuestion].options.map(
+              (option: string, index: number) => (
+                <StyledLabelQuestion
+                  id="questionOptions"
+                  key={`options-${index}`}
+                  htmlFor={`alternative-${index}`}
+                  onClick={() => setIsChecked(true)}
+                >
+                  <input
+                    type="radio"
+                    name="answer"
+                    id={`alternative-${index}`}
+                    value={index}
+                    checked={isChecked}
+                  />
+                  {option}
                 </StyledLabelQuestion>
-              ))
-            }
+              )
+            )}
           </StyledFieldQuestion>
           <LineDetail isQuestionPage={true} />
         </StyledQuestionDiv>
-        <div style={{ display: "flex", columnGap: "3.125rem", justifyContent: "right" }}>
+        <div
+          style={{
+            display: "flex",
+            columnGap: "3.125rem",
+            justifyContent: "right",
+          }}
+        >
           <Button buttonLabel="Desistir" buttonType="button" testState={true} />
-          <Button buttonLabel="Avançar" buttonType="submit" testState={false} onClick={nextQuestion} />
+          <Button
+            buttonLabel="Avançar"
+            buttonType="submit"
+            testState={false}
+            onClick={nextQuestion}
+          />
         </div>
       </form>
     </StyledQuestionSection>
