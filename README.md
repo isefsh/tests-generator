@@ -24,7 +24,8 @@ npm install
 
 ```
 npm install react-router-dom@6
-npm install --save styled-components
+npm install styled-components
+npm install --save @types/styled-components
 ```
 
 <p><strong>Para rodar o projeto utilize o comando:</strong></p>
