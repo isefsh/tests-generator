@@ -37,9 +37,9 @@ const HomePage = () => {
       saveTestData(testData);
       localStorage.setItem("testData", JSON.stringify(testData));
       toNavigate("/question");
+    } else {
+      alert("Verifique se seu nome está preenchido e um tema foi escolhido!")
     }
-
-    return null;
   }
 
   return (
