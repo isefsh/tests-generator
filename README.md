@@ -20,7 +20,7 @@ git clone https://github.com/isefsh/tests-generator.git
 npm install
 ```
 
-<p>A instalação para as bibliotecas usadas se dá pelos seguintes comandos: (Utilizar apenas se houver erros por consequência das bibliotecas)</p>
+<p>A instalação para as bibliotecas usadas se dá pelos seguintes comandos: <strong>(Utilizar apenas se houver erros por consequência das bibliotecas)</strong></p>
 
 ```
 npm install react-router-dom@6
