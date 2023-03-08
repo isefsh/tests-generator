@@ -5,7 +5,7 @@ import SupportMessage from "../components/UI/SupportMessage";
 const QuestionPage = () => {
   const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
   return (
-    <main style={{ paddingBlockStart: "2.281em", paddingBlockEnd: "9.875em", overflowX: "hidden" }}>
+    <main style={{ paddingBlockStart: "2.281em", overflowX: "hidden" }}>
       <FieldQuestion />
       <SupportMessage />
     </main>

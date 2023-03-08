@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const StyledHomePageSection = styled.section`
   width: 100%;
   padding-block-start: 4.719rem;
-  padding-block-end: 9.875rem;
   overflow-x: hidden;
 `;
 
