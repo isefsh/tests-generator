@@ -14,7 +14,7 @@ tendo acesso a sua nota e ao seus acertos e erros.</p>
 git clone https://github.com/isefsh/tests-generator.git
 ```
 
-<p>Em seguida, abra o terminal para este projeto e rode o comando a seguir:</p>
+<p>Em seguida, abra o terminal para este projeto e rode o comando a seguir: <strong>(O único comando que deve ser rodado para a instalação do projeto)</strong></p>
 
 ```
 npm install
